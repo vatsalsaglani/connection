@@ -9,6 +9,11 @@ class PagesController < ApplicationController
   end
 
   def profile
+    if(User.find_by_username(params[:id]))
+      @username = params[:id]
+    else
+      redirect_to root_path, :notice => "User not Found!!"
+    end
   end
 
   def explore
