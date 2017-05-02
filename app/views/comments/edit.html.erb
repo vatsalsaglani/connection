@@ -1,0 +1,5 @@
+<h1>Edit Opinion</h1>
+<%= simple_form_for ([@message, @comment]) do |f| %>
+  <%= f.input :content, label: "Opinion" %>
+  <%= f.button :submit, class: "btn-info" %>
+<% end %>

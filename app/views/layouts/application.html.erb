@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Connection</title>
+    <title>Forum | Lets discuss our opinions!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,12 +9,42 @@
   </head>
 
   <body>
-
-    <%= render 'layouts/nav' %>
-      <span class="notice"><%= notice %></span>
-      <span class="alert"><%= alert %></span>
     <div class="container">
-      <%= yield %>
+      <nav class="nav navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand"><%= link_to "football.hub", root_path, class: "navbar-brand" %></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="navbar-nav nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "Create A Poll", new_message_path %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
     </div>
+
+
+
+
+
+    </div>
+
+  </nav>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
+<div class="container">
+  <%= yield %>
+  </div>
   </body>
 </html>
