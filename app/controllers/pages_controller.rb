@@ -23,6 +23,8 @@ class PagesController < ApplicationController
     end
     @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
     @newPost = Post.new
+    @random_post = Post.where.not(id: @post).order("RANDOM()").first
+    @random_post1 = Post.where.not(id: @random_post).order("RANDOM()").first
 
   end
 
@@ -32,7 +34,7 @@ class PagesController < ApplicationController
 
 
 
-  
+
 
   private
 
