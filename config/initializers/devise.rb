@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '5065bd6e3651e6c9a820593896472a18061d3d8f847c712a48911e3752c5c984d07ec4902edf602e90132ebc12605f96c8458d913a81bf4fdb132fdff8091100'
+  # config.secret_key = '6996629f872e885928ed5e96d5ea090f8ac2f0c2e57e77e3e6f7125b7a6d61deea34519d915e29c572aab5b330eb2d9c632f7a948bb149b175cf344728bfc5de'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -90,12 +90,6 @@ Devise.setup do |config|
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
 
-  # When false, Devise will not attempt to reload routes on eager load.
-  # This can reduce the time taken to boot the app but if your application
-  # requires the Devise mappings to be loaded during boot time the application
-  # won't boot properly.
-  # config.reload_routes = true
-
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 11. If
   # using other algorithms, it sets how many times you want the password to be hashed.
@@ -108,12 +102,9 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'c370f66c48f27bc0aa4692191c964c05a3a8719dd9fbbf4d8baa780c04c800f37fe9a68015aa4e8b292c93478ae5d92b5532f6310ca41e16f8f0642ee034b66c'
+  # config.pepper = 'a83c4aebb04279c85987770594483688a44987fb34067e2b435e7eeabec7da6ccbd6b612d4375145a92ab6263673218539ee92263031a08a6a89ed3998442dee'
 
-  # Send a notification to the original email when the user's email is changed.
-  # config.send_email_changed_notification = false
-
-  # Send a notification email when the user's password is changed.
+  # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
@@ -157,12 +148,12 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 8..72
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  # config.email_regexp = /\A[^@]+@[^@]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this

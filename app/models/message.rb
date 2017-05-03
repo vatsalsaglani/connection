@@ -1,4 +1,4 @@
 class Message < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  after_create_commit { BroadcastMessageJob.perform_later self  }
 end
